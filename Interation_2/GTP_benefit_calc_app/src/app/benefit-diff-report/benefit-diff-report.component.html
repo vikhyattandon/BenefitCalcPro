@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <h3>Employee Benefit Report:</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Benefit Cost</th>
+          <th>Employer Contribution</th>
+          <th>Final Cost</th>
+          <th>Cost Diff</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let benefitDiffReport of benefitDiffReports">
+          <td>{{benefitDiffReport.benefitReport.employee.firstName}}</td>
+          <td>{{benefitDiffReport.benefitReport.employee.lastName}}</td>
+          <td>{{benefitDiffReport.benefitReport.benefitCost}}</td> 
+          <td>{{benefitDiffReport.benefitReport.employerContribution}}</td>
+          <td>{{benefitDiffReport.benefitReport.finalCost}}</td>
+          <td>{{benefitDiffReport.costDiff}}</td>         
+        </tr>          
+      </tbody>
+    </table>
+    <div *ngIf="showError">{{errorMessage}}</div>
+    <button (click)="redirect('employeeSearch');">Back To Main</button>

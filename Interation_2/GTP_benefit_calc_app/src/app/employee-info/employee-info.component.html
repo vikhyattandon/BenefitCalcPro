@@ -1,0 +1,120 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">    
+    <button (click)="redirect('employeeSearch');">Back to Employee Search</button>
+    <h2>Employee Info</h2>
+    <form [formGroup]="employeeForm" novalidate (ngSubmit)="saveEmployee(employeeForm.value, employeeForm.valid)">
+        <table class="table table-striped">
+         <tbody>
+            <tr>
+              <td><label>First Name </label></td>
+              <td><input type="text" formControlName="firstName"></td>
+              <td><label>Last Name </label></td>
+              <td><input type="text" formControlName="lastName"></td>                      
+            </tr> 
+            <tr>
+              <td><label>Start Date </label></td>
+              <td><input type="text" formControlName="startDate"></td>
+              <td><label>Login </label></td>
+              <td><input type="text" formControlName="login"></td>          
+            </tr>
+            <tr>
+              <td><label>Birthday </label></td>
+              <td><input type="text" formControlName="birthday"></td>
+              <td><label>Email </label></td>
+              <td><input type="text" formControlName="email"></td>          
+            </tr>
+            <tr>
+              <td><label>Status</label></td>
+              <td>
+                <select formControlName="status" [(ngModel)]="employeeForm.value.status">
+                    <option *ngFor="let x of allEmployeeStatus" [ngValue]="x" >{{x}}</option>
+                </select>
+              </td>
+              <td><label>Medical Plan </label></td>
+              <td>
+                <select formControlName="medicalPlan" [compareWith]='customComparePlan' [(ngModel)]="employeeForm.value.medicalPlan">
+                    <option [ngValue]="null">Please Select</option>
+                    <option *ngFor="let x of allMedicalPlans" [ngValue]="x" >{{x.provider}}-{{x.name}}-{{x.type}}</option>
+                </select>                
+              </td>                         
+            </tr> 
+            <tr>
+              <td><label>Dental Plan </label></td>
+              <td>
+                <select formControlName="dentalPlan" [compareWith]='customComparePlan' [(ngModel)]="employeeForm.value.dentalPlan">
+                    <option [ngValue]="null">Please Select</option>
+                    <option *ngFor="let x of allDentalPlans" [ngValue]="x" >{{x.provider}}-{{x.name}}-{{x.type}}</option>
+                </select>                
+              </td>
+              <td><label>Vision Plan </label></td>
+              <td>
+                <select formControlName="visionPlan" [compareWith]='customComparePlan' [(ngModel)]="employeeForm.value.visionPlan">
+                    <option [ngValue]="null">Please Select</option> 
+                    <option *ngFor="let x of allVisionPlans" [ngValue]="x" >{{x.provider}}-{{x.name}}-{{x.type}}</option>
+                </select>                
+              </td>                        
+            </tr>                                    
+          </tbody>
+        </table>   
+        <button type="submit">Submit</button>
+    </form>
+    <h3>Dependents</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Relation</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dependent of dependents">
+          <td>{{dependent.firstName}}</td>
+          <td>{{dependent.lastName}}</td>
+          <td>{{dependent.type}}</td> 
+          <td><button (click)="setCurrentDependent(dependent)">View</button></td>
+          <td><button (click)="deleteDependent(dependent)">Remove</button></td>          
+        </tr>          
+      </tbody>
+    </table>
+    <div *ngIf="showError">{{errorMessage}}</div>
+    <button (click)="setNewDependent()">Add New Dependent</button>    
+
+    <div *ngIf="currentDependent">
+    <h3>Add or Update Dependent</h3>
+    <form [formGroup]="dependentForm" novalidate (ngSubmit)="saveDependent(dependentForm.value, dependentForm.valid)">
+        <table class="table table-striped">
+         <tbody>
+            <tr>
+              <td><label>First Name </label></td>
+              <td><input type="text" formControlName="firstName"></td>
+              <td><label>Medical Plan </label></td>
+              <td><input type="checkbox" formControlName="medicalPlanFlag"></td>                        
+            </tr> 
+            <tr>
+              <td><label>Last Name </label></td>
+              <td><input type="text" formControlName="lastName"></td>
+              <td><label>Dental Plan </label></td>
+              <td><input type="checkbox" formControlName="dentalPlanFlag"></td>          
+            </tr>
+            <tr>
+              <td><label>Birthday </label></td>
+              <td><input type="text" formControlName="birthday"></td>
+              <td><label>Vision Plan </label></td>
+              <td><input type="checkbox" formControlName="visionPlanFlag"></td>                        
+            </tr> 
+            <tr>
+              <td><label>Person Type </label></td>
+              <td>
+                <select formControlName="type">
+                    <option *ngFor="let x of allDependentTypes" [ngValue]="x" >{{x}}</option>
+                </select>
+                </td> 
+              <td></td>
+              <td></td>          
+            </tr>                                     
+          </tbody>
+        </table>        
+        <button type="submit">Submit</button>
+    </form>  
+    </div>

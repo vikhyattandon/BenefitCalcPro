@@ -1,4 +1,5 @@
-<h2>GTP Benefit Calcuation Pro</h2>
+<h2>GTP Benefit Calcuation Pro Rest Web Service. This a eclipse project with Maven Build</h2>
+
 
 <b>Technologies:</b>
 <ul>

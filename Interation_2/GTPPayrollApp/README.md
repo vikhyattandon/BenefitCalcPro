@@ -1,8 +1,8 @@
-<h2>RESTfull web services with Spring Boot, Jersey and hibernate using PostgreSQL database (Java configuration).</h2>
+<h2>GTP Benefit Calcuation Pro</h2>
 
 <b>Technologies:</b>
 <ul>
-<li>Java 8</li>
+<li>Java 7</li>
 <li>Maven 3</li>
 <li>Spring Boot 1.1.9.RELEASE</li>
 <li>Jersey 2.7</li>

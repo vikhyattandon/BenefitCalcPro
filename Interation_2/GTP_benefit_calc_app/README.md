@@ -1,8 +1,6 @@
-## Angular 2 Play
+## GTP Benefit Calculation Pro - Angular 2.0 project
 
 This repo uses Angular 2.0.2 Material 2 Alpha 9 and is hosted with Webpack using [Angular CLI](https://github.com/angular/angular-cli).
-
-<img src="screenshots/readme-screen.png" border="0" />
 
 Run the following commands to run the application
 

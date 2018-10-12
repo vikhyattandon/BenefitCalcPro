@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<md-card>
+  <md-card-content>
+    <h2>Device Readings(Auto Reload)</h2>
+       
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Mac Address</th>
+          <th>Info Type</th>
+          <th>Value</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reading of allReadings">
+          <td>{{reading.macAddress}}</td>
+          <td>{{reading.infoType}}</td>
+          <td>{{reading.value}}</td>
+          <td>{{reading.createTsStr}}</td>
+        </tr>  
+      </tbody>
+    </table> 
+    <div *ngIf="showError">{{errorMessage}}</div>  
+  </md-card-content>
+</md-card>

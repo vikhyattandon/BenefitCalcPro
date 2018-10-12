@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<md-card>
+  <md-card-content>
+    <h2>Get Device Reading</h2>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <div>
+        <md-input required placeholder="mac address?" [formControl]="macAddress"></md-input>
+        <md-input required placeholder="info type?" [formControl]="infoType"></md-input>
+      </div>
+
+      <button md-raised-button color="primary" type="submit" [disabled]="!myForm.valid">Get Readings</button>
+      <button md-raised-button color="primary" type="reset" (click)="clearResult()" >Clear</button>
+    </form>  
+    
+    <h2>Readings for this device</h2>
+       
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Mac Address</th>
+          <th>Value</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reading of readings">
+          <td>{{reading.macAddress}}</td>
+          <td>{{reading.value}}</td>
+          <td>{{reading.Timestamp}}</td>
+        </tr>  
+      </tbody>
+    </table> 
+    <div *ngIf="showError">{{errorMessage}}</div>  
+  </md-card-content>
+</md-card>
+
+<!--<div *ngIf="!myForm.valid && myForm.dirty">Form is invalid</div>
+<div *ngIf="!newTodo.valid && newTodo.dirty">newTodo is invalid</div>
+
+<md-progress-circle mode="determinate" value="79"></md-progress-circle>
+<md-progress-circle mode="indeterminate"></md-progress-circle>
+<md-spinner></md-spinner>
+
+<md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
+<md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
+<md-progress-circle mode="indeterminate" color="warn"></md-progress-circle>-->

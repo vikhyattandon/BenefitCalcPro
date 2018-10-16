@@ -2,7 +2,7 @@
 
 
 ## Motivation
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+This project provide the benefit department of the company a great tool to calculate the health, dental and vision benefit and generate report for financial processing.
 
 ## Build status
 Build status of continus integration i.e. travis, appveyor etc. Ex. - 

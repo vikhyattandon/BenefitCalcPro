@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+
+  postgres:
+    build: postgres
+    image: touchpoinntsinc/postgres-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  payroll:
+    build: GTPPayrollApp
+    image: touchpoinntsinc/payroll
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    

@@ -20,7 +20,7 @@ export class MembersComponent implements OnInit {
       if(auth) {
         this.name = auth;
         //window.location.href = 'http://localhost:4200/employeeInfo/willy.wang@touchpointsinc.com';
-        window.location.href = 'http://10.1.10.178:4200/employeeInfo/' + auth.auth.email;
+        window.location.href = 'http://localhost:4200/employeeInfo/' + auth.auth.email;
       }
       console.log(this.name);
     });

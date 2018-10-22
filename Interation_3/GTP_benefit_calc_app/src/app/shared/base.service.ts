@@ -11,8 +11,7 @@ export class BaseService {
       }
 
       getRestURL() {
-        return 'http://10.1.10.178:8091';
-        //return 'http://73.192.254.188:8091';
+        return 'http://192.168.99.100:8080';
       }
 
       getHttp() {

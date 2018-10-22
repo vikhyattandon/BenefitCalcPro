@@ -58,8 +58,8 @@ This will take sometime to start the last line is "Tomcat started on port(s): 80
 
 ## How to use?
 we can use the app with login and without login.
-  *  To use without login The app is running on localhost:4200. We can search for employes look at the benefits and modify them.
-  *  To use with login to the app. 1st we need to register with the google or facebook emaild here http://localhost:4200/employeeRegister and then go to  localhost:4201. We can create a acount with the app and then come back to localhost:4201 and login and use the app
+  *  To use without login The app is running on http://localhost:4200. We can search for employes look at the benefits and modify them.
+  *  To use with login to the app. 1st we need to register with the google or facebook emaild here http://localhost:4200/employeeRegister and then go to http://localhost:4201. We can create a acount with the app and then come back to localhost:4201 and login and use the app
 
 ## Contribute
 

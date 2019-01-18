@@ -32,7 +32,7 @@ What makes your project stand out?
 Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
 
 ## Installation
-We need to have the node and docker install on the computer.
+We need to have the node, angular and docker install on the computer.
 
 ## API Reference
 
